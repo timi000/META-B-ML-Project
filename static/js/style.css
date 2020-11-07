@@ -8,7 +8,7 @@ h1{
 }
 h2{
     font-size: small;
-    color: floralwhite;
+    /* color: floralwhite; */
     text-decoration: underline;
     width: 220px;
     border-width: 1px;
@@ -19,12 +19,12 @@ h2{
 .header-wrap{
     background-color: slategrey;
 }
-body {
+/* body {
     background-image: url(https://law-review.sumdu.edu.ua/wp-content/uploads/2016/04/Simple-Blue-Background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover ;
-  }
+  } */
 
   #block1, #block2
   {
@@ -33,7 +33,7 @@ body {
       max-width: fit-content;
   }
 p{
-    color: floralwhite;
+    /* color: floralwhite; */
     text-indent: "40px";
     font-size: 20px;
 }
@@ -41,5 +41,16 @@ hr{
     height: 35px;
     width: 1300px;
     align-items: center;
-    color: blanchedalmond;
+   /*  color: blanchedalmond; */
+}
+.tab { 
+    text-indent:40px 
+}
+footer{
+    position: static;
+    bottom: 0%;
+}
+.text-center{
+    text-align: center;
+    /* color: floralwhite; */
 }

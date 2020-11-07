@@ -18,14 +18,14 @@
                <a href="/" class="Logo_small">
                 <img src="https://i.pinimg.com/474x/8f/a4/c1/8fa4c1a81470155ff9933bd5cfe37b86.jpg" width="100px" height="75px">
             </a>
-            <span class="Navbar-text">Meta-B: Diabetes predictors Using Machine Learning as a tool</span>
+            <span class="Navbar-text">Meta-B: Diabetes Predictors Using Machine Learning as a Tool</span>
         </h1>
            </div>
        </header>
        <div class="intro col-md-12">
            <h2>Our Challenge</h2>
-           <br>
-           <p>Currently, one in three Canadians has diabetes or prediabetes. Previous research shows that those 20 years of age 
+
+           <p class="tab">Currently, one in three Canadians has diabetes or prediabetes. Previous research shows that those 20 years of age 
                today face a 50 per cent chance of developing diabetes in their lifetime. We want to know, can AI predict diabetes with high accuracy? 
                With AI and machine learning gathering traction in the last decade we decided to 
                test this theory ourselves. With our knowdlege of font and back-end programming we sought out to get ourselves a viable dataset 
@@ -42,13 +42,14 @@
         </div>
         <div class="dataset-info col-md-12">
            <h2>Our Data</h2>
-           <p>We found a pre-existing dataset on Kaggle of compiled diabetic and nondiabetic patients involved in testing featuring 
+           <p class="tab">We found a pre-existing dataset on Kaggle of compiled diabetic and nondiabetic patients involved in testing featuring 
            desireable measures. Our original dataset contained over 5,000 entries and 62 columns. After a much needed clean-up
            and running our data through a Random Forest algorithm to determine our biggest factors and contributors in diabetics, we cut that number
            down to 3,200 entries and 34 columns. Each column factors in a bias/weight of at least 1% into our data, up to approximately
            20% for our highest common factor among diabetics. Although the dataset is nowhere near the 10,000 entries we would have hoped
-           it gave us insights into what are early signs and which demographics are at the highest risk. 
-           <br>
+           it gave us insights into what are early signs and which demographics are at the highest risk. </p>
+    
+           <p class="tab">
            Of course with our progress we also encountered some limitations. Our data does not contain information regarding if diabetes is 
            prevalent in their family history. As we all know, this is a big factor as mutations that facilitate developing diabetes can be passed
            on. On the brightside, we already know that factors in, which leaves us to test how likely our lifestyles can impact our development of this disease.
@@ -57,9 +58,17 @@
 
        <div class="process col-md-12">
         <h2>Our Process</h2>
-        <p>
+        <p class="tab">
             Training a machine learning model is easy... or so we thought. Initially we split our data into 80% training and 20% 
-            testing data.
+            testing data. Then, we created multiple linear regression models followed by a random forest classifier to see which
+            datapoints had the most influence on our predictions. This lead us to drop dimensions in our data that had less than 1% impact
+            on our machine learning model. Next, we looped through a KNN model to find the most accurate representation of our nearest neighbors.
+            Afterwards, we created a support vector machine linear classifier , fitted our data, and ran a grid search. What happened 
+            next surpised us, our model had precision above 80%! Sadly, this was an early celebration as our recall score was subpar.
+            What this meant was that our model was inaccurately predicting false negatives which meant our model could wrongly predict 
+            if people did NOT have diabetes when they could be pre-diabetic.
+            
+
 
         </p>
        </div>
@@ -67,23 +76,48 @@
        <div class="tableau col-md-12" id="block_container">
            <div class="tableau-text col-md-6" id="block1">
             <h2>Our Findings</h2><hr class="rounded" height= "30px">
-            <img src="https://acttoronto.com/wp-content/uploads/2015/09/Blue-Banner.jpg"
+            <img src="https://law-review.sumdu.edu.ua/wp-content/uploads/2016/04/Simple-Blue-Background.jpg"
             height="30px" width="1300px" class="img" >
             <p>text explaining vizuals on the right</p>
            </div>
            <div class="tableau-viz col-md-6" id="block2">
-               <p>temporary placeholder for tableau vizuals</p>
+            <div class='tableauPlaceholder' id='viz1604770212567' style='width:400px; height:400px' ><noscript>
+                <a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;37&#47;37Y55XGQX&#47;1_rss.png' style='border: none' /></a>
+                </noscript><object class='tableauViz'  style='display:block; height: 400px;width: 400px;'  >
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='path' value='shared&#47;37Y55XGQX' /> 
+                    <param name='toolbar' value='no' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;37&#47;37Y55XGQX&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en' />
+                    <param name='filter' value='publish=yes' />
+                </object></div>                
+                <script type='text/javascript'>                    var divElement = document.getElementById('viz1604770212567');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
            </div>
-       </div>
 
        <div class="conclusion col-md-12">
-           <h2>conclusion</h2>
+           <h2>Conclusion</h2>
        </div>
 
        <div class="form" id="form">
 
        </div>
-
+       <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center">© Copyright META-B 2020 © </h4>
+                </div>
+            </div>
+    </footer>
     </div>
         
 </body>
