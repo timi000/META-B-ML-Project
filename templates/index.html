@@ -7,6 +7,7 @@
   
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="../static/js/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/js/index.js">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -18,8 +19,10 @@
                <a href="/" class="Logo_small">
                 <img src="https://i.pinimg.com/474x/8f/a4/c1/8fa4c1a81470155ff9933bd5cfe37b86.jpg" width="100px" height="75px">
             </a>
-            <span class="Navbar-text">Meta-B: Diabetes Predictors Using Machine Learning as a Tool</span>
+            <span class="Navbar-text">Meta-B: Diabetes Predictors Using Machine Learning as a Tool</span><br>
+            <input type="button" onClick="document.getElementById('middle').scrollIntoView();" />
         </h1>
+        <input type="button" onClick="document.getElementById('form').scrollIntoView();" />
            </div>
        </header>
        <div class="intro col-md-12">
@@ -58,57 +61,47 @@
 
        <div class="process col-md-12">
         <h2>Our Process</h2>
-        <p class="tab">
-            Training a machine learning model is easy... or so we thought. Initially we split our data into 80% training and 20% 
-            testing data. Then, we created multiple linear regression models followed by a random forest classifier to see which
-            datapoints had the most influence on our predictions. This lead us to drop dimensions in our data that had less than 1% impact
-            on our machine learning model. Next, we looped through a KNN model to find the most accurate representation of our nearest neighbors.
-            Afterwards, we created a support vector machine linear classifier , fitted our data, and ran a grid search. What happened 
-            next surpised us, our model had precision above 80%! Sadly, this was an early celebration as our recall score was subpar.
-            What this meant was that our model was inaccurately predicting false negatives which meant our model could wrongly predict 
-            if people did NOT have diabetes when they could be pre-diabetic.
+        <p class="tab"> We determined our data had three possible outomes: Diabetic, Non-diabetic, Pre-diabetic. After running the model in the beginning,
+             our scores resulted in low or very low accuracy and recall in the Pre-diabetic class. As a result we decided to drop that 
+             class to increase our models chances of success. This increased our models successful probability rate. Next, we began with 
+             a designing a logistic regression model which we then scaled, trained, fit, and tested trained data on. 
             
-
-
         </p>
        </div>
 
        <div class="tableau col-md-12" id="block_container">
-           <div class="tableau-text col-md-6" id="block1">
-            <h2>Our Findings</h2><hr class="rounded" height= "30px">
+           
+            <h2>Our Findings</h2>
             <img src="https://law-review.sumdu.edu.ua/wp-content/uploads/2016/04/Simple-Blue-Background.jpg"
             height="30px" width="1300px" class="img" >
-            <p>text explaining vizuals on the right</p>
+            <p1> One of the interesting insights we've gained by looking at the data was how diabetes prevalance increases with age.
+                This is likely due to lifestyle choices and health factors such as activity levels as well as genetics.
+                 <div class='tableauPlaceholder' id='viz1604971697617' style='position: relative' ><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;DiabetesAssignment&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:inline-block;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DiabetesAssignment&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;DiabetesAssignment&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1604971697617');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='616px';vizElement.style.height='591px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                 <p2>-as you can see above, the average BMI of diabetics is higher, a clear sign that BMI is a common factor among diabetes prevalance</p2>
+                 </p1>
            </div>
-           <div class="tableau-viz col-md-6" id="block2">
-            <div class='tableauPlaceholder' id='viz1604770212567' style='width:400px; height:400px' ><noscript>
-                <a href='#'>
-                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;37&#47;37Y55XGQX&#47;1_rss.png' style='border: none' /></a>
-                </noscript><object class='tableauViz'  style='display:block; height: 400px;width: 400px;'  >
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                    <param name='embed_code_version' value='3' /> 
-                    <param name='path' value='shared&#47;37Y55XGQX' /> 
-                    <param name='toolbar' value='no' />
-                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;37&#47;37Y55XGQX&#47;1.png' /> 
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en' />
-                    <param name='filter' value='publish=yes' />
-                </object></div>                
-                <script type='text/javascript'>                    var divElement = document.getElementById('viz1604770212567');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
-
-           </div>
-
+        
        <div class="conclusion col-md-12">
            <h2>Conclusion</h2>
+           <p>  </p>
        </div>
-
-       <div class="form" id="form">
-
+       <div class="container col-md-12">
+        <div class="jumbotron" id= 'form' style="text-align: center">
+            <h1>Diabetes Diagnostics</h1>
+            <p>Please fill out the survey below !</p>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <form method="POST" action="/predict" role="form", name="Diabetesform" class="Form">
+                   
+                </form>
+            </div>
+        </div>
+    <div class ="row" >
+    <!-- Add Welcome message with name and hobby served from backend -->
+    <h1>Results: </h1>
+    <p> {{results}}</p>
+  </div>
        </div>
        <footer>
         <div class="container">
