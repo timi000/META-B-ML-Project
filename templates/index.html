@@ -19,10 +19,9 @@
                <a href="/" class="Logo_small">
                 <img src="https://i.pinimg.com/474x/8f/a4/c1/8fa4c1a81470155ff9933bd5cfe37b86.jpg" width="100px" height="75px">
             </a>
-            <span class="Navbar-text">Meta-B: Diabetes Predictors Using Machine Learning as a Tool</span><br>
-            <input type="button" onClick="document.getElementById('middle').scrollIntoView();" />
+            <span class="Navbar-text">Meta-B: Diabetes Predictors Using Machine Learning as a Tool</span>
         </h1>
-        <input type="button" onClick="document.getElementById('form').scrollIntoView();" />
+        <input type="button" value="Click here to submit a diagnostic Form" onClick="document.getElementById('form').scrollIntoView();" />
            </div>
        </header>
        <div class="intro col-md-12">
@@ -63,9 +62,33 @@
         <h2>Our Process</h2>
         <p class="tab"> We determined our data had three possible outomes: Diabetic, Non-diabetic, Pre-diabetic. After running the model in the beginning,
              our scores resulted in low or very low accuracy and recall in the Pre-diabetic class. As a result we decided to drop that 
-             class to increase our models chances of success. This increased our models successful probability rate. Next, we began with 
-             a designing a logistic regression model which we then scaled, trained, fit, and tested trained data on. 
-            
+             class to increase our models chances of success. We hoped this increased our models successful probability rate. Next, we began with 
+             a designing a logistic regression model which we then scaled, trained, fit, and tested trained data on. The results were as follows: <br>
+             <b>Training data score:</b> 0.917. <br>
+            <b>Testing data score:</b> 0.991.<br>
+            <b>Recall:</b> 0.40.<br>
+        </p>
+        <p>
+            Our second approach we applied a Deep Learning model. The first step we took was reversing the values of the outcome (E.g. 
+            1= Not diabetic -> 0= Not diabetic , 0=Diabetic -> 1=Diabetic ). The next step was solving the problem of imbalanced data 
+            by applying a Synthetic Minority Oversampling Technique (SMOTE) to balance the data. We then fitted, scaled, hot-encoded,
+            and defined the 5 hidden layers of our Neural Network each with <b>102</b> neurons and an input dimension of <b>32</b> and 
+            output of <b>2</b>. The results from this testing was:
+            <br><b>Precision (Non-diabetic):</b> 0.9.
+            <br><b>Precision (Diabetic): </b>0.4.
+            <br><b>Recall (Non-diabetic): </b>1.00.
+            <br><b>Recall (Diabetic):</b> 0.03.
+
+        </p>
+        <p>
+            Finally, we optimized our model using an SVM (Support Vector Machine) algorithm to find the optimal hyperplane to separate
+            diabetics from non-diabetics. Again we reversed the outcome values, followed by splitting and scaling the data, 
+            creating a grid search estimator, and fitting the data to the model.Our final prediction pesulted in:
+            <br><b>Precision (Non-diabetic):</b> 0.96.
+            <br><b>Precision (Diabetic): </b>0.88.
+            <br><b>Recall (Non-diabetic): </b>0.99.
+            <br><b>Recall (Diabetic):</b> 0.62.
+
         </p>
        </div>
 
@@ -83,7 +106,16 @@
         
        <div class="conclusion col-md-12">
            <h2>Conclusion</h2>
-           <p>  </p>
+           <p>  
+            We ended up deciding on using SVM model to predict diabetes in our application we created. The high precision scores
+            for both classes and high recall scores for diabetes prediction made it optimal for potentially diagnosing diabetes and reducing
+            the risk of false negatives in our predictions. Our goal now is to continue adding data to our model as this will increased
+            it's accuracy and could potentially give us more insights into early warning signs for people at risk of diabetes.
+           </p><br>
+           <p>
+            Below you can find a Diagnostic form where you can input your data anonymously. Your data will serve to improve our model as well 
+            as expand on the existing database in hopes that in the future we can use it to improve future research.
+           </p>
        </div>
        <div class="container col-md-12">
         <div class="jumbotron" id= 'form' style="text-align: center">
@@ -115,11 +147,10 @@
         
 </body>
 
-<!-- API key -->
-<script type="text/javascript" src="../static/config.js"></script>
+<script type="text/javascript" src="../static/js/config.js"></script>
 <!-- Our JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script type="text/javascript" src="../static/js/app.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</body>
 
 </html>

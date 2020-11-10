@@ -2,6 +2,7 @@
     font-size: 35px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:rgb(228, 222, 222) ;
+    display: inline-block;
 }
 h1{
     font-size: 45px;
@@ -85,4 +86,16 @@ div.tableauPlaceholder{
     margin-left: auto;
     margin-right: auto;
 
+}
+
+
+input[type=button] {
+    padding: 9px;
+    font-size: 20px;
+    line-height: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1;
+    display: block;
+   background-color: deepskyblue;
 }
