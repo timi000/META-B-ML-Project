@@ -14,8 +14,9 @@
     <_.fcp.SetMembershipControl.true...SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Diabetes_16047688060260' path='/workbooks' revision='1.5' />
+  <repository-location id='Diabetes_16047688060260' path='/workbooks' revision='1.7' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -900,7 +901,12 @@
       <_.fcp.ObjectModelTableType.true...column caption='diabetes.csv' datatype='table' name='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' role='measure' type='quantitative' />
       <column caption='A1C' datatype='real' name='[a1c]' role='measure' type='quantitative' />
       <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
-      <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='3' value='46-64' />
+          <alias key='4' value='65+' />
+        </aliases>
+      </column>
       <column caption='Alb' datatype='real' name='[alb]' role='measure' type='quantitative' />
       <column caption='Alb Cr Ratio' datatype='real' name='[alb_cr_ratio]' role='measure' type='quantitative' />
       <column caption='Alk Phos' datatype='real' name='[alk_phos]' role='measure' type='quantitative' />
@@ -922,7 +928,12 @@
       <column caption='Cr' datatype='real' name='[cr]' role='measure' type='quantitative' />
       <column caption='Cva' datatype='real' name='[cva]' role='measure' type='quantitative' />
       <column caption='Dia Bp' datatype='real' name='[dia_bp]' role='measure' type='quantitative' />
-      <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='1.0' value='Diabetic' />
+          <alias key='2.0' value='Non-diabetic' />
+        </aliases>
+      </column>
       <column caption='Education' datatype='real' name='[education]' role='measure' type='quantitative' />
       <column caption='Gen Health' datatype='real' name='[gen_health]' role='measure' type='quantitative' />
       <column aggregation='Sum' caption='Gender' datatype='integer' name='[gender]' role='dimension' type='ordinal' />
@@ -958,11 +969,14 @@
       <column caption='Waist Cm' datatype='real' name='[waist_cm]' role='measure' type='quantitative' />
       <column caption='Wbc' datatype='real' name='[wbc]' role='measure' type='quantitative' />
       <column caption='Weight Kg' datatype='real' name='[weight_kg]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:diabetes.csv_D738313369F4416FA2995EE5AA447C1E:qk]' pivot='key' type='quantitative' />
       <column-instance column='[asthma]' derivation='Avg' name='[avg:asthma:qk]' pivot='key' type='quantitative' />
       <column-instance column='[bmi]' derivation='Avg' name='[avg:bmi:qk]' pivot='key' type='quantitative' />
       <column-instance column='[glucose]' derivation='Avg' name='[avg:glucose:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[grip_strength]' derivation='Avg' name='[avg:grip_strength:qk]' pivot='key' type='quantitative' />
       <column-instance column='[t_chol]' derivation='Avg' name='[avg:t_chol:qk]' pivot='key' type='quantitative' />
       <column-instance column='[bmi]' derivation='Count' name='[cnt:bmi:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[bmi]' derivation='Median' name='[med:bmi:qk]' pivot='key' type='quantitative' />
       <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
       <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
       <column-instance column='[a1c]' derivation='Sum' name='[sum:a1c:qk]' pivot='key' type='quantitative' />
@@ -985,10 +999,40 @@
       <column-instance column='[copd]' derivation='Sum' name='[sum:copd:qk]' pivot='key' type='quantitative' />
       <column-instance column='[cpk]' derivation='Sum' name='[sum:cpk:qk]' pivot='key' type='quantitative' />
       <column-instance column='[cr]' derivation='Sum' name='[sum:cr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cva]' derivation='Sum' name='[sum:cva:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[dia_bp]' derivation='Sum' name='[sum:dia_bp:qk]' pivot='key' type='quantitative' />
       <column-instance column='[diabetes]' derivation='Sum' name='[sum:diabetes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[education]' derivation='Sum' name='[sum:education:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gen_health]' derivation='Sum' name='[sum:gen_health:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[glob]' derivation='Sum' name='[sum:glob:qk]' pivot='key' type='quantitative' />
       <column-instance column='[glucose]' derivation='Sum' name='[sum:glucose:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[grip_strength]' derivation='Sum' name='[sum:grip_strength:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[hct]' derivation='Sum' name='[sum:hct:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[hdl]' derivation='Sum' name='[sum:hdl:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[height_cm]' derivation='Sum' name='[sum:height_cm:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[hgb]' derivation='Sum' name='[sum:hgb:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[household_size]' derivation='Sum' name='[sum:household_size:qk]' pivot='key' type='quantitative' />
       <column-instance column='[income]' derivation='Sum' name='[sum:income:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[insurance]' derivation='Sum' name='[sum:insurance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[iron]' derivation='Sum' name='[sum:iron:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ldh]' derivation='Sum' name='[sum:ldh:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[marital]' derivation='Sum' name='[sum:marital:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[mi]' derivation='Sum' name='[sum:mi:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[phos]' derivation='Sum' name='[sum:phos:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[platelets]' derivation='Sum' name='[sum:platelets:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[potassium]' derivation='Sum' name='[sum:potassium:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[s_cotinine]' derivation='Sum' name='[sum:s_cotinine:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[seqn]' derivation='Sum' name='[sum:seqn:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[smoker]' derivation='Sum' name='[sum:smoker:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[sodium]' derivation='Sum' name='[sum:sodium:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[sys_bp]' derivation='Sum' name='[sum:sys_bp:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[t_bilirubin]' derivation='Sum' name='[sum:t_bilirubin:qk]' pivot='key' type='quantitative' />
       <column-instance column='[t_chol]' derivation='Sum' name='[sum:t_chol:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[t_protein]' derivation='Sum' name='[sum:t_protein:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[trigs]' derivation='Sum' name='[sum:trigs:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[u_acid]' derivation='Sum' name='[sum:u_acid:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[waist_cm]' derivation='Sum' name='[sum:waist_cm:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[wbc]' derivation='Sum' name='[sum:wbc:qk]' pivot='key' type='quantitative' />
       <column-instance column='[weight_kg]' derivation='Sum' name='[sum:weight_kg:qk]' pivot='key' type='quantitative' />
       <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
         <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/Maury/Documents/My Tableau Repository/Datasources/diabetes.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
@@ -1981,6 +2025,12 @@
             <map to='#499894'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:asthma:qk]&quot;</bucket>
             </map>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:hct:qk]&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:t_protein:qk]&quot;</bucket>
+            </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk]&quot;</bucket>
             </map>
@@ -1991,16 +2041,28 @@
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[cnt:bmi:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[med:bmi:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:diabetes:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:platelets:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:weight_kg:qk]&quot;</bucket>
             </map>
             <map to='#59a14f'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:alb_cr_ratio:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:gen_health:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:sodium:qk]&quot;</bucket>
             </map>
             <map to='#76b7b2'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:glucose:qk]&quot;</bucket>
@@ -2011,11 +2073,32 @@
             <map to='#79706e'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bp_group:qk]&quot;</bucket>
             </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:household_size:qk]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:wbc:qk]&quot;</bucket>
+            </map>
             <map to='#86bcb6'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bicarb:qk]&quot;</bucket>
             </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:hdl:qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:trigs:qk]&quot;</bucket>
+            </map>
             <map to='#8cd17d'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:alk_phos:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glob:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:sys_bp:qk]&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[__tableau_internal_object_id__].[cnt:diabetes.csv_D738313369F4416FA2995EE5AA447C1E:qk]&quot;</bucket>
             </map>
             <map to='#9d7660'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:chloride:qk]&quot;</bucket>
@@ -2026,17 +2109,38 @@
             <map to='#a0cbe8'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:a1c:qk]&quot;</bucket>
             </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:cva:qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:s_cotinine:qk]&quot;</bucket>
+            </map>
             <map to='#b07aa1'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:cancer:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:marital:qk]&quot;</bucket>
             </map>
             <map to='#b6992d'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:alt:qk]&quot;</bucket>
             </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:potassium:qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:t_bilirubin:qk]&quot;</bucket>
+            </map>
             <map to='#bab0ac'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bun:qk]&quot;</bucket>
             </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:insurance:qk]&quot;</bucket>
+            </map>
             <map to='#d37295'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:ca:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:iron:qk]&quot;</bucket>
             </map>
             <map to='#d4a6c8'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:chf:qk]&quot;</bucket>
@@ -2044,17 +2148,41 @@
             <map to='#d4a6c8'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:copd:qk]&quot;</bucket>
             </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:mi:qk]&quot;</bucket>
+            </map>
             <map to='#d7b5a6'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:cr:qk]&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:phos:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:height_cm:qk]&quot;</bucket>
             </map>
             <map to='#e15759'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:income:qk]&quot;</bucket>
             </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:u_acid:qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:grip_strength:qk]&quot;</bucket>
+            </map>
             <map to='#f1ce63'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:ast:qk]&quot;</bucket>
             </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]&quot;</bucket>
+            </map>
             <map to='#f28e2b'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:t_chol:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:dia_bp:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:seqn:qk]&quot;</bucket>
             </map>
             <map to='#f28e2b'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:t_chol:qk]&quot;</bucket>
@@ -2062,11 +2190,26 @@
             <map to='#fabfd2'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:cad:qk]&quot;</bucket>
             </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:ldh:qk]&quot;</bucket>
+            </map>
             <map to='#ff9d9a'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi_group:qk]&quot;</bucket>
             </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:hgb:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:waist_cm:qk]&quot;</bucket>
+            </map>
             <map to='#ffbe7d'>
               <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:alb:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:education:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:smoker:qk]&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -2176,6 +2319,22 @@
         <param name='target' value='Sheet 13' />
       </command>
     </action>
+    <action caption='Highlight 4 (generated)' name='[Action4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Diabetes' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Highlight 5 (generated)' name='[Action5]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 2' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Diabetes' />
+        <param name='target' value='Dashboard 2' />
+      </command>
+    </action>
   </actions>
   <worksheets>
     <worksheet name='Sheet 11'>
@@ -2188,7 +2347,12 @@
             <_.fcp.ObjectModelTableType.false...column caption='diabetes.csv' datatype='integer' name='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' role='measure' type='quantitative' />
             <column-instance column='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:diabetes.csv_D738313369F4416FA2995EE5AA447C1E:qk]' pivot='key' type='quantitative' />
             <_.fcp.ObjectModelTableType.true...column caption='diabetes.csv' datatype='table' name='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column aggregation='Sum' caption='Income' datatype='real' name='[income]' role='dimension' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
             <column-instance column='[income]' derivation='None' name='[none:income:ok]' pivot='key' type='ordinal' />
@@ -2231,7 +2395,12 @@
             <_.fcp.ObjectModelTableType.false...column caption='diabetes.csv' datatype='integer' name='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' role='measure' type='quantitative' />
             <column-instance column='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:diabetes.csv_D738313369F4416FA2995EE5AA447C1E:qk]' pivot='key' type='quantitative' />
             <_.fcp.ObjectModelTableType.true...column caption='diabetes.csv' datatype='table' name='[__tableau_internal_object_id__].[diabetes.csv_D738313369F4416FA2995EE5AA447C1E]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
             <column-instance column='[race]' derivation='None' name='[none:race:ok]' pivot='key' type='ordinal' />
             <column aggregation='Sum' caption='Race' datatype='integer' name='[race]' role='dimension' type='ordinal' />
@@ -2272,7 +2441,12 @@
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
             <column-instance column='[grip_strength]' derivation='Avg' name='[avg:grip_strength:qk]' pivot='key' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column aggregation='Sum' caption='Gender' datatype='integer' name='[gender]' role='dimension' type='ordinal' />
             <column caption='Grip Strength' datatype='real' name='[grip_strength]' role='measure' type='quantitative' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
@@ -2322,154 +2496,14 @@
             <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
-            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
-            <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Income' datatype='real' name='[income]' role='dimension' type='ordinal' />
-            <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[glucose]' derivation='None' name='[none:glucose:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[income]' derivation='Sum' name='[sum:income:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[:Measure Names]'>
-            <groupfilter function='union' user:op='manual'>
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]&quot;' />
-              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:income:qk]&quot;' />
-            </groupfilter>
-          </filter>
-          <filter class='categorical' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]'>
-            <groupfilter function='member' level='[none:diabetes:ok]' member='1.0' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='quantitative' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:glucose:qk]' included-values='in-range'>
-            <min>31.0</min>
-            <max>617.0</max>
-          </filter>
-          <slices>
-            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]</column>
-            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:glucose:qk]</column>
-            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[:Measure Names]</column>
-          </slices>
-          <aggregation value='false' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Bar' />
-            <encodings>
-              <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[:Measure Names]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[Multiple Values]</rows>
-        <cols>([federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:age_group:ok] / [federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[:Measure Names])</cols>
-      </table>
-      <simple-id uuid='{0DB9CDAB-BF5E-4F1B-AD15-AD848A2C27F2}' />
-    </worksheet>
-    <worksheet name='count weak grip str'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
-            <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
-            <column caption='Grip Strength' datatype='real' name='[grip_strength]' role='measure' type='quantitative' />
-            <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[grip_strength]' derivation='None' name='[none:grip_strength:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[glucose]' derivation='Sum' name='[sum:glucose:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[grip_strength]' derivation='Sum' name='[sum:grip_strength:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]'>
-            <groupfilter function='member' level='[none:diabetes:ok]' member='1.0' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='quantitative' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:grip_strength:qk]' included-values='in-range'>
-            <min>20.300000000000001</min>
-            <max>70.0</max>
-          </filter>
-          <slices>
-            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]</column>
-            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:grip_strength:qk]</column>
-          </slices>
-          <aggregation value='false' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' palette='red_10_0' type='interpolated' />
-            <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]' palette='blue_10_0' reverse='true' type='interpolated' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Circle' />
-            <reference-line axis-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' z-order='1' />
-            <reference-line axis-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline1' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]' z-order='2' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='size' value='0.25' />
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Circle' />
-            <encodings>
-              <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='size' value='0.25' />
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Circle' />
-            <encodings>
-              <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='size' value='0.25' />
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>([federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk] + [federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk])</rows>
-        <cols>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:age_group:ok]</cols>
-      </table>
-      <simple-id uuid='{A5596BB5-1C21-478B-A208-5B58B1F1CE9B}' />
-    </worksheet>
-    <worksheet name='diabetes prevalance by Age'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
             <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
             <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
@@ -2485,7 +2519,148 @@
           </slices>
           <aggregation value='false' />
         </view>
-        <style />
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' palette='red_green_diverging_10_0' reverse='true' type='interpolated' />
+            <encoding attr='size' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' field-type='quantitative' max-size='1' min-size='0' type='quantsize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2.1876013278961182' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]</rows>
+        <cols>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:age:ok]</cols>
+      </table>
+      <simple-id uuid='{0DB9CDAB-BF5E-4F1B-AD15-AD848A2C27F2}' />
+    </worksheet>
+    <worksheet name='count weak grip str'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Grip Strength comparison in Diabetics vs Non-diabetics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
+            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='3' value='46-64' />
+                <alias key='4' value='65+' />
+              </aliases>
+            </column>
+            <column-instance column='[grip_strength]' derivation='Avg' name='[avg:grip_strength:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
+            <column caption='Grip Strength' datatype='real' name='[grip_strength]' role='measure' type='quantitative' />
+            <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:diabetes:ok]' member='1.0' />
+              <groupfilter function='member' level='[none:diabetes:ok]' member='2.0' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:grip_strength:qk]' palette='blue_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:grip_strength:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline1' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:grip_strength:qk]' z-order='2' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[avg:grip_strength:qk]</rows>
+        <cols>([federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:age_group:ok] / [federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok])</cols>
+      </table>
+      <simple-id uuid='{A5596BB5-1C21-478B-A208-5B58B1F1CE9B}' />
+    </worksheet>
+    <worksheet name='diabetes prevalance by Age'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>BMI distribuition by Age for Diabetics and non-diabetics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
+            <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
+            <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
+            <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[glucose]' derivation='Sum' name='[sum:glucose:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:diabetes:ok]' member='1.0' />
+              <groupfilter function='member' level='[none:diabetes:ok]' member='2.0' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' field-type='quantitative' max-size='1' min-size='0' type='quantsize' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -2494,11 +2669,13 @@
             <mark class='Automatic' />
             <encodings>
               <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' />
+              <size column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
                 <format attr='mark-labels-cull' value='true' />
                 <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='2.1876013278961182' />
               </style-rule>
             </style>
           </pane>
@@ -2523,8 +2700,18 @@
             <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='3' value='46-64' />
+                <alias key='4' value='65+' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
             <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
@@ -2563,9 +2750,19 @@
             <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='3' value='46-64' />
+                <alias key='4' value='65+' />
+              </aliases>
+            </column>
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
             <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
@@ -2616,9 +2813,19 @@
             <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='3' value='46-64' />
+                <alias key='4' value='65+' />
+              </aliases>
+            </column>
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
             <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
@@ -2655,6 +2862,13 @@
       <simple-id uuid='{7950EB25-4709-4FEE-A3D3-02D2294A0D73}' />
     </worksheet>
     <worksheet name='glucose vs bmi 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>glucose vs BMI in diabetics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
           <datasources>
@@ -2663,7 +2877,12 @@
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
             <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
             <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
@@ -2679,6 +2898,9 @@
           <aggregation value='false' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' value='56' />
+          </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' num-steps='6' palette='green_gold_10_0' type='interpolated' />
             <encoding attr='size' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' field-type='quantitative' max-size='1' min-size='0' type='rangesize' />
@@ -2707,6 +2929,13 @@
       <simple-id uuid='{CEF84F02-2614-473C-A327-1EA083EBF538}' />
     </worksheet>
     <worksheet name='glucose vs bmi 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Glucose vs BMI in non-diabetics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
           <datasources>
@@ -2715,7 +2944,12 @@
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
             <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
             <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
@@ -2732,7 +2966,7 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <format attr='width' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' value='10' />
+            <format attr='width' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' value='56' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' num-steps='6' palette='green_gold_10_0' type='interpolated' />
@@ -2746,6 +2980,7 @@
             <mark class='Automatic' />
             <encodings>
               <color column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' />
+              <size column='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' />
             </encodings>
           </pane>
         </panes>
@@ -2763,7 +2998,12 @@
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
             <column aggregation='Sum' caption='Age' datatype='integer' name='[age]' role='dimension' type='ordinal' />
             <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column caption='Glucose' datatype='real' name='[glucose]' role='measure' type='quantitative' />
             <column-instance column='[age]' derivation='None' name='[none:age:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='None' name='[none:diabetes:ok]' pivot='key' type='ordinal' />
@@ -2856,8 +3096,18 @@
             <datasource caption='diabetes' name='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk' />
           </datasources>
           <datasource-dependencies datasource='federated.0vbi7zh0gk0o3m16gvu0x02zqkqk'>
-            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal' />
-            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Age Group' datatype='integer' name='[age_group]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='3' value='46-64' />
+                <alias key='4' value='65+' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Diabetes' datatype='real' name='[diabetes]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1.0' value='Diabetic' />
+                <alias key='2.0' value='Non-diabetic' />
+              </aliases>
+            </column>
             <column-instance column='[age_group]' derivation='None' name='[none:age_group:ok]' pivot='key' type='ordinal' />
             <column-instance column='[diabetes]' derivation='Sum' name='[sum:diabetes:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
@@ -2912,20 +3162,12 @@
   <dashboards>
     <dashboard name='Dashboard 1'>
       <style />
-      <size maxheight='650' maxwidth='420' minheight='650' minwidth='420' preset-index='6' sizing-mode='fixed' />
+      <size maxheight='700' maxwidth='1000' minheight='700' minwidth='1000' preset-index='1' sizing-mode='fixed' />
       <zones>
-        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
-          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97538' id='7' param='horz' w='96190' x='1905' y='1231'>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='97538' id='5' w='96190' x='1905' y='1231'>
-              <zone h='75637' id='3' name='glucose vs bmi 1' w='96190' x='1905' y='23132'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' fixed-size='57' h='21901' id='9' is-fixed='true' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='96190' x='1905' y='1231'>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='2' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97714' id='5' param='horz' w='98400' x='800' y='1143'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='97714' id='3' w='98400' x='800' y='1143'>
+              <zone h='97714' id='1' name='diabetes prevalance by Age' w='98400' x='800' y='1143'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -2942,14 +3184,16 @@
             <format attr='margin' value='8' />
           </zone-style>
         </zone>
+        <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='14000' id='6' name='diabetes prevalance by Age' pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' w='14000' x='84300' y='11714' />
+        <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8286' id='7' name='diabetes prevalance by Age' pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' w='14000' x='85100' y='1714' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='17' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97538' id='16' param='vert' w='96190' x='1905' y='1231'>
-                <zone fixed-size='280' h='75637' id='3' is-fixed='true' name='glucose vs bmi 1' w='96190' x='1905' y='23132'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='9' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97714' id='8' param='vert' w='98400' x='800' y='1143'>
+                <zone fixed-size='280' h='97714' id='1' is-fixed='true' name='diabetes prevalance by Age' w='98400' x='800' y='1143'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2958,7 +3202,16 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' fixed-size='57' h='21901' id='9' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='96190' x='1905' y='1231'>
+                <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='14000' id='6' name='diabetes prevalance by Age' pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' w='14000' x='84300' y='11714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8286' id='7' name='diabetes prevalance by Age' pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' w='14000' x='85100' y='1714'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2979,6 +3232,134 @@
         </devicelayout>
       </devicelayouts>
       <simple-id uuid='{0590B6EF-A55F-4D5C-8071-3751A4B00F14}' />
+    </dashboard>
+    <dashboard name='Dashboard 2'>
+      <style />
+      <size maxheight='760' maxwidth='750' minheight='760' minwidth='750' preset-index='5' sizing-mode='fixed' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='2' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97894' id='5' param='horz' w='97866' x='1067' y='1053'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='97894' id='3' w='97866' x='1067' y='1053'>
+              <zone h='97894' id='1' name='count weak grip str' w='97866' x='1067' y='1053'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='7632' id='6' name='count weak grip str' pane-specification-id='3' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' w='18667' x='73867' y='1184' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones />
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C5ECCF6A-74C4-4EC5-BB48-E5A54D4C6294}' />
+    </dashboard>
+    <dashboard name='Dashboard 3'>
+      <style />
+      <size maxheight='700' maxwidth='1100' minheight='700' minwidth='1100' sizing-mode='fixed' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97714' id='7' param='horz' w='98546' x='727' y='1143'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='442' h='97714' id='6' is-fixed='true' param='vert' w='98546' x='727' y='1143'>
+              <zone h='48857' id='3' name='glucose vs bmi 1' w='98546' x='727' y='1143'>
+                <layout-cache minheight='184' type-h='scalable' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='48857' id='10' name='glucose vs bmi 2' w='98546' x='727' y='50000'>
+                <layout-cache cell-count-w='60' minheight='184' non-cell-size-w='10' type-h='scalable' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='10857' id='9' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='12727' x='71364' y='857' />
+        <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='16857' id='8' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='12727' x='86182' y='1429' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='16' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='97714' id='15' param='vert' w='98546' x='727' y='1143'>
+                <zone fixed-size='280' h='48857' id='3' is-fixed='true' name='glucose vs bmi 1' w='98546' x='727' y='1143'>
+                  <layout-cache minheight='184' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='10857' id='9' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='12727' x='71364' y='857'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='size' _.fcp.SetMembershipControl.true...type-v2='size' h='16857' id='8' name='glucose vs bmi 1' pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' w='12727' x='86182' y='1429'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48857' id='10' is-fixed='true' name='glucose vs bmi 2' w='98546' x='727' y='50000'>
+                  <layout-cache cell-count-w='60' minheight='184' non-cell-size-w='10' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{929D9E7E-7526-49EE-A233-5185CFCAA6AE}' />
     </dashboard>
   </dashboards>
   <windows source-height='30'>
@@ -3034,6 +3415,7 @@
         <edge name='right'>
           <strip size='160'>
             <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' type='size' />
           </strip>
         </edge>
       </cards>
@@ -3102,7 +3484,6 @@
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
-            <card type='measures' />
           </strip>
         </edge>
         <edge name='top'>
@@ -3118,14 +3499,13 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:glucose:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
-            <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[:Measure Names]' type='color' />
+            <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:bmi:qk]' type='size' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{FA69C7DA-530E-4F53-8B03-4131700F6CAE}' />
     </window>
-    <window class='worksheet' maximized='true' name='count weak grip str'>
+    <window class='worksheet' name='count weak grip str'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -3147,8 +3527,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='1' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' type='color' />
-            <card pane-specification-id='2' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:grip_strength:qk]' type='color' />
+            <card pane-specification-id='3' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -3172,9 +3551,10 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='100'>
-            <card type='title' />
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[sum:glucose:qk]' type='size' />
             <card pane-specification-id='0' param='[federated.0vbi7zh0gk0o3m16gvu0x02zqkqk].[none:diabetes:ok]' type='color' />
+            <card type='title' />
           </strip>
         </edge>
       </cards>
@@ -3350,12 +3730,33 @@
     </window>
     <window class='dashboard' name='Dashboard 1'>
       <viewpoints>
-        <viewpoint name='glucose vs bmi 1'>
+        <viewpoint name='diabetes prevalance by Age'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
       <active id='-1' />
       <simple-id uuid='{703F5CCE-E105-460B-AE2B-7883A54F6490}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='count weak grip str'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='1' />
+      <simple-id uuid='{9B96C3F8-EAC5-42B7-A16B-BFD806BBC48F}' />
+    </window>
+    <window class='dashboard' name='Dashboard 3'>
+      <viewpoints>
+        <viewpoint name='glucose vs bmi 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='glucose vs bmi 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{D579E20D-6F19-4583-8F11-6E5518E60FB2}' />
     </window>
   </windows>
 </workbook>
