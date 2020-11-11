@@ -18,7 +18,7 @@ data.forEach(d=>
 
     })
 
-    selectTag.append("input").attr("type", "submit").attr("value", "submit").attr("class","btn btn-default")
+    selectTag.append("input").attr("type", "submit").attr("value", "submit").attr("class","btn btn-default");
 
 
     
