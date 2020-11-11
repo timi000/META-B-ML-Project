@@ -16,9 +16,9 @@ termcolor==1.1.0
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 mistune==0.8.4
-mkl-fft==1.1.0
-mkl-random==1.1.1
-mkl-service==2.3.0
+mkl-fft>=1.0.6
+mkl-random>=1.0.6
+mkl-service>=2.2.0
 mrjob==0.7.4
 pickleshare==0.7.5
 Keras==2.4.3
