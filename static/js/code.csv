@@ -1,0 +1,35 @@
+﻿Med_name,Name
+a1c,Hemoglobin A1c
+glucose,Glucose
+alb_cr_ratio,Albumin Creatine Ratio (mg/g)
+t_chol,Total Colesterol
+trigs,Triglyceride 
+platelets,Platelets
+grip_strength,Grip Strength
+ldh,Intradialytic hypotension
+cr,Creatine Kidney Test
+alk_phos,Alkaline Phosphatase
+wbc,White blood cell count (1000 cells/uL)
+potassium,Potassium
+alt,ALT
+hct,Hematocrit(%)
+bun,Blood urea nitrogen
+ca,Calcium
+u_acid,Uric Acid
+cpk,Creatine Phoskinase
+sodium,Sodium
+hdl,High Density Lipoprotein
+hgb,Hemoglobins(g/dL)
+glob,Globulin
+ast,AST
+t_protein,Total Protein
+iron,Iron
+hypertension,Hypertension: 1(yes) 2(No)
+gen_health, health (1-5)
+phos,Phosphorus
+s_cotinine,Serum Continine
+chloride,Chloride
+t_bilirubin,Total bilirubin
+bmi_group,"BMI: 0 (Less than 25), 1 (  25-30), 2(Greater than 30)"
+age_group,"Age Group : 0 (0-20), 1 (21-30), 2 (31-45), 3(46-65), 4(65+)"
+bp_group,"Blood Pressure : 0 (Systolic bp < 120),  1 (Systolic bp 120-129), 2(Systolic bp  >130)"
